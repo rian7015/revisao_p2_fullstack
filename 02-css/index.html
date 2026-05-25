@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Aula 02 — CSS Introdução</title>
+  <link rel="stylesheet" href="estilo.css">
+  <style>
+    .incorporado { color: green; font-weight: bold; }
+    #titulo-unico { font-size: 2em; text-decoration: underline; }
+    div p { color: darkblue; }
+    .caixa:hover { background-color: yellow; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h1 id="titulo-unico">CSS — Referência Introdução</h1>
+
+  <h2>Formas de adicionar CSS</h2>
+  <ul>
+    <li>1ª Inline: <code style="color:red;">style="..."</code> direto na tag (NÃO recomendado)</li>
+    <li>2ª Incorporado: dentro da tag &lt;style&gt; no &lt;head&gt;</li>
+    <li>3ª Linkado: arquivo externo .css (MELHOR)</li>
+  </ul>
+
+  <h2>Seletores</h2>
+  <p class="incorporado">Texto verde — seletor de classe (.incorporado)</p>
+  <p>Texto azul escuro — seletor de descendência (div p)</p>
+
+  <div>
+    <p>Parágrafo dentro de div — afetado pelo seletor "div p"</p>
+  </div>
+
+  <h2>Classes e IDs</h2>
+  <div id="caixa-id">Div com ID — identificador único na página</div>
+  <div class="caixa">Div com classe — reutilizável (passe o mouse!)</div>
+  <div class="caixa">Outra div com a mesma classe</div>
+
+  <h2>Pseudo-classe :hover</h2>
+  <p>Passe o mouse sobre as caixas acima para ver o efeito.</p>
+
+  <h2>Cascata — herança de estilos</h2>
+  <div style="color: purple;">
+    <p>Este parágrafo herdou a cor roxo da div pai — isso é a CASCATA do CSS!</p>
+  </div>
+
+  <h2>Referência rápida de propriedades CSS</h2>
+  <table class="ref-table">
+    <tr><th>Propriedade</th><th>Exemplo</th><th>O que faz</th></tr>
+    <tr><td>color</td><td>color: red</td><td>Cor do texto</td></tr>
+    <tr><td>background-color</td><td>background-color: blue</td><td>Cor de fundo</td></tr>
+    <tr><td>font-size</td><td>font-size: 20px</td><td>Tamanho da fonte</td></tr>
+    <tr><td>font-family</td><td>font-family: Arial</td><td>Tipo da fonte</td></tr>
+    <tr><td>font-weight</td><td>font-weight: bold</td><td>Negrito</td></tr>
+    <tr><td>text-align</td><td>text-align: center</td><td>Alinhamento do texto</td></tr>
+    <tr><td>text-decoration</td><td>text-decoration: underline</td><td>Sublinhado</td></tr>
+    <tr><td>width / height</td><td>width: 200px</td><td>Largura / Altura</td></tr>
+    <tr><td>margin</td><td>margin: 10px</td><td>Espaço externo</td></tr>
+    <tr><td>padding</td><td>padding: 10px</td><td>Espaço interno</td></tr>
+    <tr><td>border</td><td>border: 1px solid black</td><td>Borda</td></tr>
+  </table>
+
+</body>
+</html>

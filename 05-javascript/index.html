@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Aula 05/06 — JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; background: #fffbe6; }
+    section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #f0db4f; }
+    h1 { color: #323330; } h2 { color: #555; }
+    pre { background: #272822; color: #f8f8f2; padding: 12px; border-radius: 5px; }
+    button { background: #f0db4f; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1em; margin: 5px; }
+    button:hover { background: #e6c800; }
+    input[type="text"], input[type="number"] { padding: 8px; margin: 5px; border-radius: 5px; border: 1px solid #ccc; }
+    .resultado { background: #f0f0f0; padding: 10px; border-radius: 5px; margin: 10px 0; min-height: 30px; }
+  </style>
+</head>
+<body>
+
+<h1>⚡ JavaScript — Referência e Exemplos</h1>
+
+<section>
+  <h2>1. Variáveis e Tipos</h2>
+  <pre>
+let nome = "João";         // string
+let idade = 20;            // number (inteiro)
+let altura = 1.75;         // number (decimal)
+let ativo = true;          // boolean
+const PI = 3.14159;        // constante (não muda)
+
+// Escopos:
+x = 10;          // global - NÃO RECOMENDADO
+var a = 10;      // escopo de função
+let b = 10;      // escopo de bloco ✅
+const c = 10;    // bloco, somente leitura ✅</pre>
+</section>
+
+<section>
+  <h2>2. Operadores</h2>
+  <pre>
+// Aritméticos
++  -  *  /  %   (módulo/resto)
+
+// Comparação (use sempre ===)
+===  !==   >   <   >=   <=
+==   !=    (converte tipo - evite!)
+
+// Lógicos
+&&  (E)    ||  (OU)    !  (NÃO)
+
+// Exemplos:
+5 + 3      // 8
+10 % 3     // 1
+"5" === 5  // false (tipos diferentes)
+"5" == 5   // true  (converte tipo)</pre>
+</section>
+
+<section>
+  <h2>3. Conversão de Tipos</h2>
+  <pre>
+let num = Number("42");        // "42" → 42
+let inteiro = parseInt("42.9"); // → 42
+let decimal = parseFloat("3.14"); // → 3.14
+let texto = String(42);        // 42 → "42"
+let texto2 = (42).toString();  // 42 → "42"</pre>
+</section>
+
+<section>
+  <h2>4. Controle de Fluxo</h2>
+  <pre>
+// IF / ELSE IF / ELSE
+if (nota >= 7) {
+  console.log("Aprovado");
+} else if (nota >= 5) {
+  console.log("Recuperação");
+} else {
+  console.log("Reprovado");
+}
+
+// WHILE
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+
+// FOR
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+// FOR com array
+let frutas = ["maçã", "banana", "uva"];
+for (let i = 0; i < frutas.length; i++) {
+  console.log(frutas[i]);
+}</pre>
+</section>
+
+<section>
+  <h2>5. Funções</h2>
+  <pre>
+// Sem parâmetro, sem retorno
+function ola() {
+  alert("Olá!");
+}
+
+// Com parâmetro
+function saudacao(nome) {
+  alert("Olá, " + nome + "!");
+}
+
+// Com parâmetros e retorno
+function soma(a, b) {
+  return a + b;
+}
+let resultado = soma(5, 3); // 8
+
+// Chamadas
+ola();
+saudacao("Maria");
+console.log(soma(10, 20)); // 30</pre>
+</section>
+
+<section>
+  <h2>6. Arrays</h2>
+  <pre>
+let frutas = ["maçã", "banana", "uva"];
+frutas.push("laranja");   // adiciona ao final
+frutas.pop();             // remove o último
+frutas.length;            // tamanho: 3
+frutas[0];                // "maçã" (índice 0)
+delete frutas[1];         // remove índice 1</pre>
+</section>
+
+<section>
+  <h2>7. DOM — Manipulando o HTML</h2>
+  <pre>
+// Pegar elemento por ID
+let el = document.getElementById("meuId");
+
+// Alterar conteúdo
+el.innerHTML = "novo conteúdo";
+el.innerText = "só texto, sem HTML";
+
+// Alterar estilo
+el.style.color = "red";
+el.style.backgroundColor = "yellow";
+el.style.display = "none";     // esconde
+el.style.display = "block";    // mostra
+
+// Entrada e saída
+let nome = prompt("Digite seu nome:");
+alert("Olá, " + nome);
+console.log("debug no console F12");</pre>
+
+  <p>Exemplo prático: <input type="text" id="campo-nome" placeholder="Digite seu nome">
+  <button onclick="mostrarNome()">Mostrar</button></p>
+  <div class="resultado" id="resultado-nome">O nome aparece aqui...</div>
+</section>
+
+<section>
+  <h2>8. Eventos HTML</h2>
+  <pre>
+onclick      — clique do mouse
+onmouseover  — mouse passa por cima
+onmouseout   — mouse sai de cima
+onchange     — valor do campo muda
+onkeydown    — tecla pressionada
+onload       — página terminou de carregar
+
+Exemplos no HTML:
+&lt;button onclick="minhaFuncao()"&gt;Clique&lt;/button&gt;
+&lt;div onmouseover="mudaCor()"&gt;Passe o mouse&lt;/div&gt;
+&lt;input type="text" onchange="texto()"&gt;</pre>
+
+  <button onclick="alert('Você clicou!')">onclick</button>
+  <div style="display:inline-block; background:#264de4; color:white; padding:10px; border-radius:5px; cursor:pointer;"
+       onmouseover="this.style.background='red'"
+       onmouseout="this.style.background='#264de4'">
+    onmouseover / onmouseout
+  </div>
+</section>
+
+<section>
+  <h2>9. Exemplo Completo — Calculadora</h2>
+  <input type="number" id="num1" placeholder="Número 1">
+  <input type="number" id="num2" placeholder="Número 2">
+  <button onclick="calcular('+')">+</button>
+  <button onclick="calcular('-')">-</button>
+  <button onclick="calcular('*')">×</button>
+  <button onclick="calcular('/')">÷</button>
+  <div class="resultado" id="resultado-calc">Resultado aqui</div>
+</section>
+
+<section>
+  <h2>10. Exemplo — Número Aleatório</h2>
+  <button onclick="gerarAleatorio()">Gerar número entre 0 e 100</button>
+  <div class="resultado" id="resultado-aleatorio"></div>
+  <pre>Math.random()          // 0.0 a 0.9999
+Math.floor(x)          // arredonda para baixo
+Math.floor(Math.random() * 101)  // 0 a 100</pre>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

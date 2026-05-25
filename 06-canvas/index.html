@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Aulas 07/08 — Canvas</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #1a1a2e; color: white; }
+    h1, h2 { color: #f0db4f; }
+    canvas { border: 2px solid #f0db4f; border-radius: 5px; display: block; margin: 10px 0; }
+    section { background: #16213e; padding: 20px; margin: 20px 0; border-radius: 8px; }
+    pre { background: #0f3460; padding: 12px; border-radius: 5px; font-size: 0.85em; }
+    button { background: #f0db4f; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; margin: 5px; }
+    .flex { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
+  </style>
+</head>
+<body>
+
+<h1>🎨 Canvas — Referência Completa</h1>
+
+<section>
+  <h2>Setup Básico</h2>
+  <pre>
+HTML:
+&lt;canvas id="canvas" width="400" height="400"&gt;&lt;/canvas&gt;
+
+CSS:
+#canvas { background-color: #eee; }
+
+JavaScript:
+let canvas = document.getElementById('canvas');
+let ctx = canvas.getContext('2d');
+
+Coordenadas: (0,0) = canto superior esquerdo
+X cresce →  Y cresce ↓</pre>
+</section>
+
+<section>
+  <h2>Formas Geométricas</h2>
+  <div class="flex">
+    <div>
+      <h3>Retângulos</h3>
+      <canvas id="c-retangulo" width="250" height="150"></canvas>
+      <pre>
+ctx.beginPath();
+ctx.fillStyle = 'blue';
+ctx.strokeStyle = 'red';
+ctx.lineWidth = 3;
+ctx.fillRect(x, y, w, h);   // preenchido
+ctx.strokeRect(x, y, w, h); // borda
+ctx.clearRect(x, y, w, h);  // apaga área
+ctx.closePath();</pre>
+    </div>
+    <div>
+      <h3>Círculos / Arcos</h3>
+      <canvas id="c-circulo" width="250" height="150"></canvas>
+      <pre>
+ctx.beginPath();
+ctx.arc(cx, cy, raio,
+        anguloInicial, anguloFinal);
+// Círculo completo:
+ctx.arc(100, 75, 50, 0, 2*Math.PI);
+ctx.fill();
+ctx.stroke();
+ctx.closePath();</pre>
+    </div>
+    <div>
+      <h3>Linhas</h3>
+      <canvas id="c-linha" width="250" height="150"></canvas>
+      <pre>
+ctx.beginPath();
+ctx.moveTo(x1, y1); // ponto inicial
+ctx.lineTo(x2, y2); // ponto final
+ctx.lineTo(x3, y3); // continua
+ctx.stroke();       // desenha
+ctx.fill();         // preenche
+ctx.closePath();</pre>
+    </div>
+    <div>
+      <h3>Texto</h3>
+      <canvas id="c-texto" width="250" height="150"></canvas>
+      <pre>
+ctx.font = "30px Arial";
+ctx.textAlign = "center";
+ctx.fillStyle = "blue";
+ctx.fillText("Texto", x, y);
+ctx.strokeText("Texto", x, y);</pre>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Objetos no Canvas</h2>
+  <pre>
+let retangulo = {
+  x: 0, y: 0,
+  largura: 50, altura: 50,
+  cor: "red",
+  desenha: function() {
+    ctx.beginPath();
+    ctx.fillStyle = this.cor;
+    ctx.fillRect(this.x, this.y, this.largura, this.altura);
+    ctx.closePath();
+  }
+};
+
+let circulo = {
+  x: 100, y: 200,
+  raio: 30,
+  cor: "blue",
+  desenha: function() {
+    ctx.beginPath();
+    ctx.fillStyle = this.cor;
+    ctx.arc(this.x, this.y, this.raio, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.closePath();
+  }
+};</pre>
+</section>
+
+<section>
+  <h2>Animação com teclado — Use as setas ← ↑ → ↓</h2>
+  <canvas id="c-animacao" width="500" height="300"></canvas>
+  <pre>
+function animacao() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // LIMPA
+  objeto.x += velocidade;                            // MOVE
+  objeto.desenha();                                  // DESENHA
+  requestAnimationFrame(animacao);                   // REPETE (~60fps)
+}
+animacao(); // inicia
+
+document.addEventListener('keydown', function(evento) {
+  let tecla = evento.key;
+  if (tecla == 'ArrowUp')    objeto.y -= 5;
+  if (tecla == 'ArrowDown')  objeto.y += 5;
+  if (tecla == 'ArrowLeft')  objeto.x -= 5;
+  if (tecla == 'ArrowRight') objeto.x += 5;
+});</pre>
+</section>
+
+<section>
+  <h2>Seguindo o Mouse</h2>
+  <canvas id="c-mouse" width="500" height="200"></canvas>
+  <pre>
+document.addEventListener('mousemove', function(evento) {
+  let rect = canvas.getBoundingClientRect();
+  let mx = evento.clientX - rect.left;  // posição X dentro do canvas
+  let my = evento.clientY - rect.top;   // posição Y dentro do canvas
+  objeto.x = mx;
+  objeto.y = my;
+});</pre>
+</section>
+
+<section>
+  <h2>Funções úteis de Animação</h2>
+  <pre>
+requestAnimationFrame(funcao)  // melhor! ~60fps, para quando aba fica inativa
+setInterval(funcao, 16)        // executa a cada 16ms (~60fps)
+setTimeout(funcao, 1000)       // executa UMA vez após 1 segundo
+
+ctx.clearRect(0, 0, canvas.width, canvas.height); // limpa canvas inteiro</pre>
+</section>
+
+<script src="canvas.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Aula 04 — Flexbox</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<h1>💪 Flexbox — Referência Completa</h1>
+
+<h2>Passo 1: Criar o flex container</h2>
+<pre>.container { display: flex; }</pre>
+
+<h2>flex-direction</h2>
+<p><strong>row</strong> (padrão) — esquerda para direita</p>
+<div class="flex-row">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+
+<p><strong>column</strong> — de cima para baixo</p>
+<div class="flex-column">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+
+<p><strong>row-reverse</strong></p>
+<div class="flex-row-reverse">
+  <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+</div>
+
+<h2>justify-content (eixo principal)</h2>
+<p>flex-start:</p>
+<div class="flex-jc-start"><div class="item">A</div><div class="item">B</div><div class="item">C</div></div>
+<p>center:</p>
+<div class="flex-jc-center"><div class="item">A</div><div class="item">B</div><div class="item">C</div></div>
+<p>flex-end:</p>
+<div class="flex-jc-end"><div class="item">A</div><div class="item">B</div><div class="item">C</div></div>
+<p>space-between:</p>
+<div class="flex-jc-between"><div class="item">A</div><div class="item">B</div><div class="item">C</div></div>
+<p>space-around:</p>
+<div class="flex-jc-around"><div class="item">A</div><div class="item">B</div><div class="item">C</div></div>
+
+<h2>align-items (eixo cruzado)</h2>
+<p>center:</p>
+<div class="flex-ai-center">
+  <div class="item">pequeno</div>
+  <div class="item" style="height:80px;">alto</div>
+  <div class="item">pequeno</div>
+</div>
+<p>flex-start:</p>
+<div class="flex-ai-start">
+  <div class="item">pequeno</div>
+  <div class="item" style="height:80px;">alto</div>
+  <div class="item">pequeno</div>
+</div>
+<p>flex-end:</p>
+<div class="flex-ai-end">
+  <div class="item">pequeno</div>
+  <div class="item" style="height:80px;">alto</div>
+  <div class="item">pequeno</div>
+</div>
+
+<h2>flex-wrap</h2>
+<p>wrap — quebra a linha quando não cabe:</p>
+<div class="flex-wrap-demo">
+  <div class="item-wide">1</div>
+  <div class="item-wide">2</div>
+  <div class="item-wide">3</div>
+  <div class="item-wide">4</div>
+  <div class="item-wide">5</div>
+</div>
+
+<h2>Propriedades dos Itens</h2>
+<p>flex-grow — quanto o item cresce (item 2 cresce 3x mais):</p>
+<div class="flex-grow-demo">
+  <div class="item grow-1">grow:1</div>
+  <div class="item grow-3">grow:3</div>
+  <div class="item grow-1">grow:1</div>
+</div>
+
+<p>align-self — alinhamento individual:</p>
+<div class="flex-align-self" style="height:100px;">
+  <div class="item self-start">start</div>
+  <div class="item self-center">center</div>
+  <div class="item self-end">end</div>
+</div>
+
+<h2>order — reordenar sem mudar o HTML</h2>
+<div class="flex-order">
+  <div class="item order-3">HTML: 1 / order: 3</div>
+  <div class="item order-1">HTML: 2 / order: 1</div>
+  <div class="item order-2">HTML: 3 / order: 2</div>
+</div>
+
+<h2>Referência Rápida</h2>
+<pre>
+CONTAINER:
+  display: flex;
+  flex-direction: row | column | row-reverse | column-reverse;
+  flex-wrap: nowrap | wrap | wrap-reverse;
+  flex-flow: row wrap;                    (shorthand direction + wrap)
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+  align-items: stretch | flex-start | flex-end | center | baseline;
+  align-content: (igual align-items, mas para múltiplas linhas)
+
+ITEMS:
+  order: 2;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 200px;
+  flex: 1 0 200px;       (shorthand: grow shrink basis)
+  align-self: flex-start | flex-end | center | stretch | baseline;
+</pre>
+
+</body>
+</html>

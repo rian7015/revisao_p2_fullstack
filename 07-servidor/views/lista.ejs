@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista EJS</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <header>
+    <h1>📋 Lista com Loop EJS</h1>
+    <nav><a href="home.html">← Voltar</a></nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Tecnologias do Curso</h2>
+
+      <ul>
+        <% for (let i = 0; i < itens.length; i++) { %>
+          <li><strong><%= i + 1 %>.</strong> <%= itens[i] %></li>
+        <% } %>
+      </ul>
+
+      <p>Total de itens: <strong><%= itens.length %></strong></p>
+    </section>
+
+    <section>
+      <h2>Referência Sintaxe EJS</h2>
+      <pre>
+&lt;%= variavel %&gt;          → imprime o valor
+&lt;% codigo javascript %&gt; → executa sem imprimir
+
+Exemplos:
+&lt;%= nome %&gt;
+&lt;% if (idade > 18) { %&gt;
+  &lt;p&gt;Maior de idade&lt;/p&gt;
+&lt;% } %&gt;
+
+&lt;% for (let i = 0; i < lista.length; i++) { %&gt;
+  &lt;p&gt;&lt;%= lista[i] %&gt;&lt;/p&gt;
+&lt;% } %&gt;</pre>
+    </section>
+  </main>
+
+</body>
+</html>

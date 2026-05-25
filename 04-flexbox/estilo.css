@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+  background: #f0f0f0;
+}
+
+h1 { color: #264de4; }
+h2 { color: #555; margin-top: 25px; border-bottom: 2px solid #264de4; }
+
+pre {
+  background: #272822;
+  color: #f8f8f2;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+}
+
+.item {
+  background: #264de4;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.item-wide {
+  background: #e44d26;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  width: 180px;
+  text-align: center;
+  font-weight: bold;
+}
+
+[class^="flex-"] {
+  background: #dde3ff;
+  border-radius: 8px;
+  margin: 5px 0 15px 0;
+  padding: 5px;
+}
+
+.flex-row         { display: flex; flex-direction: row; }
+.flex-column      { display: flex; flex-direction: column; }
+.flex-row-reverse { display: flex; flex-direction: row-reverse; }
+
+.flex-jc-start   { display: flex; justify-content: flex-start; }
+.flex-jc-center  { display: flex; justify-content: center; }
+.flex-jc-end     { display: flex; justify-content: flex-end; }
+.flex-jc-between { display: flex; justify-content: space-between; }
+.flex-jc-around  { display: flex; justify-content: space-around; }
+
+.flex-ai-center { display: flex; align-items: center; height: 100px; }
+.flex-ai-start  { display: flex; align-items: flex-start; height: 100px; }
+.flex-ai-end    { display: flex; align-items: flex-end; height: 100px; }
+
+.flex-wrap-demo  { display: flex; flex-wrap: wrap; }
+
+.flex-grow-demo  { display: flex; }
+.grow-1 { flex-grow: 1; }
+.grow-3 { flex-grow: 3; background: #e44d26; }
+
+.flex-align-self { display: flex; align-items: stretch; background: #dde3ff; }
+.self-start  { align-self: flex-start; }
+.self-center { align-self: center; background: #e44d26; }
+.self-end    { align-self: flex-end; }
+
+.flex-order { display: flex; }
+.order-1 { order: 1; }
+.order-2 { order: 2; background: #27ae60; }
+.order-3 { order: 3; background: #e44d26; }

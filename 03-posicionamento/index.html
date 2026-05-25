@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Aula 03 — Posicionamento CSS</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <header class="menu-fixo">Menu Fixo (position: fixed)</header>
+
+  <main class="conteudo">
+    <h1>Posicionamento CSS</h1>
+
+    <section>
+      <h2>Box Model</h2>
+      <div class="box-model-demo">
+        Conteúdo — padding — border — margin
+      </div>
+      <pre>
+.elemento {
+  width: 200px;
+  height: 100px;
+  padding: 20px;         /* espaço INTERNO */
+  margin: 30px;          /* espaço EXTERNO */
+  border: 3px solid red; /* borda */
+  border-radius: 10px;   /* cantos arredondados */
+  box-shadow: 5px 5px 10px gray;
+}</pre>
+    </section>
+
+    <section>
+      <h2>Display: block vs inline</h2>
+      <div class="demo-block">Sou um div — display: block (ocupa a linha toda)</div>
+      <div class="demo-block">Segundo div — também ocupa linha inteira</div>
+      <span class="demo-inline">span inline</span>
+      <span class="demo-inline">outro span inline</span>
+      <span class="demo-inline">lado a lado!</span>
+
+      <pre>
+/* block: div, p, h1-h6, form, header, footer, section */
+display: block;
+
+/* inline: span, a, img */
+display: inline;
+
+/* inline-block: comporta como inline mas aceita width/height */
+display: inline-block;
+
+/* none: esconde o elemento */
+display: none;</pre>
+    </section>
+
+    <section>
+      <h2>Posicionamento: static (padrão)</h2>
+      <p>Elementos estáticos ignoram top, left, right, bottom.</p>
+      <div class="pos-static">static — fluxo normal do documento</div>
+    </section>
+
+    <section>
+      <h2>Posicionamento: relative</h2>
+      <div class="pos-relative">
+        Relativo à minha posição original (deslocado 20px para baixo e direita)
+      </div>
+      <pre>
+.relative {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}</pre>
+    </section>
+
+    <section>
+      <h2>Posicionamento: absolute</h2>
+      <div class="container-pai">
+        Container PAI (position: relative)
+        <div class="pos-absolute">
+          Absoluto: canto superior direito do pai
+        </div>
+      </div>
+      <pre>
+.pai    { position: relative; }
+.filho  { position: absolute; top: 0; right: 0; }</pre>
+    </section>
+
+    <section>
+      <h2>z-index — sobreposição</h2>
+      <div class="z-container">
+        <div class="z-baixo">z-index: 1 (fundo)</div>
+        <div class="z-cima">z-index: 10 (frente)</div>
+      </div>
+      <pre>
+.fundo  { position: absolute; z-index: 1; }
+.frente { position: absolute; z-index: 10; }</pre>
+    </section>
+
+    <section>
+      <h2>Bordas</h2>
+      <div class="borda-solida">border: 3px solid blue</div>
+      <div class="borda-dashed">border: 3px dashed red</div>
+      <div class="borda-radius">border-radius: 50% (círculo!)</div>
+      <div class="borda-sombra">box-shadow: 10px 10px 20px gray</div>
+      <pre>
+border: 2px solid black;
+border-top: 3px dashed red;
+border-radius: 10px;
+border-radius: 50%;          /* círculo perfeito */
+box-shadow: 10px 20px grey;</pre>
+    </section>
+
+  </main>
+
+  <footer class="rodape-fixo">Rodapé Fixo (position: fixed; bottom: 0)</footer>
+
+</body>
+</html>

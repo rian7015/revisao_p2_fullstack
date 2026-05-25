@@ -1,0 +1,83 @@
+/* === RESET BÁSICO === */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+  background-color: #f0f0f0;
+}
+
+/* === SELETOR DE TAG === */
+h1 {
+  color: #264de4;
+}
+
+h2 {
+  color: #555;
+  border-bottom: 2px solid #264de4;
+  padding-bottom: 5px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* === SELETOR DE CLASSE === */
+.caixa {
+  background-color: #264de4;
+  color: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  width: 300px;
+}
+
+/* === PSEUDO-CLASSE === */
+.caixa:hover {
+  background-color: #1a35b0;
+  cursor: pointer;
+}
+
+/* === SELETOR DE ID === */
+#caixa-id {
+  background-color: #e44d26;
+  color: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  width: 300px;
+}
+
+/* === SELETOR DE DESCENDÊNCIA === */
+div p {
+  color: darkblue;
+}
+
+/* === TABELA DE REFERÊNCIA === */
+.ref-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.ref-table th {
+  background-color: #264de4;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+.ref-table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+}
+
+.ref-table tr:nth-child(even) {
+  background-color: #e8ecff;
+}
+
+.ref-table tr:hover {
+  background-color: #d0d8ff;
+}

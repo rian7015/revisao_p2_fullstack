@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Usuários</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <header>
+    <h1>🍃 Usuários no Banco de Dados</h1>
+    <nav>
+      <a href="home.html">← Voltar</a>
+      <a href="/listar">🔄 Atualizar</a>
+    </nav>
+  </header>
+
+  <main style="display:block; padding:30px;">
+    <section>
+      <h2>Total de usuários: <strong><%= usuarios.length %></strong></h2>
+
+      <% if (usuarios.length === 0) { %>
+        <p>Nenhum usuário cadastrado ainda.</p>
+      <% } else { %>
+        <table>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Login</th>
+          </tr>
+          <% for (let i = 0; i < usuarios.length; i++) { %>
+            <tr>
+              <td><%= i + 1 %></td>
+              <td><%= usuarios[i].nome %></td>
+              <td><%= usuarios[i].login %></td>
+            </tr>
+          <% } %>
+        </table>
+      <% } %>
+    </section>
+  </main>
+
+</body>
+</html>

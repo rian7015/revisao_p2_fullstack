@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Aula 01 — Referência HTML Completa</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; background: #f5f5f5; }
+    section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #e44d26; }
+    h2 { color: #e44d26; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+    pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; }
+    td, th { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
+    th { background: #e44d26; color: white; }
+    tr:nth-child(even) { background: #f9f9f9; }
+  </style>
+</head>
+<body>
+
+<h1>📄 Referência Completa — HTML</h1>
+
+<!-- ===================== ESTRUTURA ===================== -->
+<section>
+  <h2>1. Estrutura Básica</h2>
+  <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Título da Página&lt;/title&gt;
+  &lt;link rel="stylesheet" href="estilo.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- conteúdo aqui --&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</section>
+
+<!-- ===================== COMENTÁRIOS ===================== -->
+<section>
+  <h2>2. Comentários</h2>
+  <!-- Isto é um comentário e não aparece na página -->
+  <pre>&lt;!-- Isto é um comentário --&gt;</pre>
+</section>
+
+<!-- ===================== TEXTO ===================== -->
+<section>
+  <h2>3. Títulos e Parágrafos</h2>
+  <h1>h1 — Título Principal</h1>
+  <h2>h2 — Subtítulo</h2>
+  <h3>h3 — Sub-subtítulo</h3>
+  <h4>h4</h4> <h5>h5</h5> <h6>h6</h6>
+  <p>Parágrafo com &lt;p&gt; — já tem quebra de linha automática.</p>
+  <p>Segundo parágrafo.</p>
+  <pre>
+&lt;h1&gt;Título&lt;/h1&gt;
+&lt;p&gt;Parágrafo&lt;/p&gt;
+&lt;br&gt; &lt;!-- quebra de linha simples --&gt;</pre>
+</section>
+
+<!-- ===================== FORMATAÇÃO ===================== -->
+<section>
+  <h2>4. Formatação de Texto</h2>
+  <p><b>negrito com b</b></p>
+  <p><strong>negrito semântico com strong</strong></p>
+  <p><i>itálico com i</i></p>
+  <p><em>ênfase com em</em></p>
+  <p><small>texto menor com small</small></p>
+  <p>Texto com <mark>destaque mark</mark></p>
+  <p><del>riscado del</del> e <ins>inserido ins</ins></p>
+  <p>H<sub>2</sub>O — subscrito com sub</p>
+  <p>X<sup>2</sup> — sobrescrito com sup</p>
+  <pre>
+&lt;b&gt;negrito&lt;/b&gt;          &lt;strong&gt;importante&lt;/strong&gt;
+&lt;i&gt;itálico&lt;/i&gt;          &lt;em&gt;ênfase&lt;/em&gt;
+&lt;small&gt;menor&lt;/small&gt;   &lt;mark&gt;destaque&lt;/mark&gt;
+&lt;del&gt;riscado&lt;/del&gt;     &lt;ins&gt;inserido&lt;/ins&gt;
+&lt;sub&gt;subscrito&lt;/sub&gt;   &lt;sup&gt;sobrescrito&lt;/sup&gt;</pre>
+</section>
+
+<!-- ===================== LISTAS ===================== -->
+<section>
+  <h2>5. Listas</h2>
+  <h3>Lista Não Ordenada (ul)</h3>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <h3>Lista Ordenada (ol)</h3>
+  <ol>
+    <li>Primeiro</li>
+    <li>Segundo</li>
+    <li>Terceiro</li>
+  </ol>
+  <pre>
+&lt;ul&gt;
+  &lt;li&gt;Item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Item&lt;/li&gt;
+&lt;/ol&gt;</pre>
+</section>
+
+<!-- ===================== IMAGEM ===================== -->
+<section>
+  <h2>6. Imagem</h2>
+  <pre>
+&lt;img src="imagem.jpg" alt="Descrição da imagem" width="300"&gt;
+&lt;img src="https://via.placeholder.com/150" alt="placeholder"&gt;</pre>
+</section>
+
+<!-- ===================== LINKS ===================== -->
+<section>
+  <h2>7. Links</h2>
+  <a href="https://www.google.com" target="_blank">Google (abre em nova aba)</a><br>
+  <a href="outra-pagina.html">Link para outra página local</a>
+  <pre>
+&lt;a href="https://www.google.com"&gt;Link externo&lt;/a&gt;
+&lt;a href="outra.html"&gt;Link local&lt;/a&gt;
+&lt;a href="https://google.com" target="_blank"&gt;Nova aba&lt;/a&gt;</pre>
+</section>
+
+<!-- ===================== IFRAME ===================== -->
+<section>
+  <h2>8. IFrame (vídeo YouTube / mapa)</h2>
+  <pre>
+&lt;iframe 
+  width="560" height="315" 
+  src="https://www.youtube.com/embed/tj8BoOYvo00" 
+  frameborder="0" allowfullscreen&gt;
+&lt;/iframe&gt;</pre>
+</section>
+
+<!-- ===================== TABELA ===================== -->
+<section>
+  <h2>9. Tabela</h2>
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Nota 1</th>
+      <th>Nota 2</th>
+    </tr>
+    <tr>
+      <td>Ana</td>
+      <td>8.5</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <td>João</td>
+      <td>7.0</td>
+      <td>8.0</td>
+    </tr>
+  </table>
+  <pre>
+&lt;table&gt;
+  &lt;tr&gt;                      &lt;!-- linha --&gt;
+    &lt;th&gt;Cabeçalho&lt;/th&gt;    &lt;!-- célula cabeçalho --&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Dado&lt;/td&gt;          &lt;!-- célula normal --&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+</section>
+
+<!-- ===================== INPUT ===================== -->
+<section>
+  <h2>10. Inputs e Formulários</h2>
+  <form>
+    <p>Texto: <input type="text" placeholder="Digite aqui"></p>
+    <p>Senha: <input type="password" placeholder="senha"></p>
+    <p>Email: <input type="email" placeholder="email@email.com"></p>
+    <p>Número: <input type="number" min="0" max="100"></p>
+    <p>Data: <input type="date"></p>
+    <p>Botão: <input type="button" value="Clique aqui" onclick="alert('Clicou!')"></p>
+    <p>Submit: <input type="submit" value="Enviar"></p>
+  </form>
+  <pre>
+&lt;input type="text"     name="nome"    placeholder="Digite"&gt;
+&lt;input type="password" name="senha"&gt;
+&lt;input type="email"    name="email"&gt;
+&lt;input type="number"   name="idade" min="0" max="120"&gt;
+&lt;input type="date"     name="nasc"&gt;
+&lt;input type="button"   value="Clique" onclick="funcao()"&gt;
+&lt;input type="submit"   value="Enviar"&gt;</pre>
+</section>
+
+<!-- ===================== FORMULÁRIO COMPLETO ===================== -->
+<section>
+  <h2>11. Formulário Completo (GET e POST)</h2>
+  <pre>
+&lt;!-- GET: dados aparecem na URL --&gt;
+&lt;form action="/rota" method="get"&gt;
+  &lt;input type="text" name="nome" placeholder="Nome"&gt;
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;
+
+&lt;!-- POST: dados vão no corpo da requisição --&gt;
+&lt;form action="/rota" method="post"&gt;
+  &lt;input type="text" name="nome" placeholder="Nome"&gt;
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</pre>
+</section>
+
+<!-- ===================== DIV E SPAN ===================== -->
+<section>
+  <h2>12. div e span</h2>
+  <pre>
+&lt;div id="unico" class="caixa"&gt;
+  &lt;!-- bloco (block): ocupa a linha toda --&gt;
+  &lt;span class="destaque"&gt;trecho inline dentro do div&lt;/span&gt;
+&lt;/div&gt;</pre>
+</section>
+
+</body>
+</html>
